@@ -6,3 +6,7 @@ export const actions = {
 		throw redirect(302, '/');
 	}
 };
+
+export const load = async () => {
+	redirect(303, '/login');
+};
