@@ -1,9 +1,8 @@
 <script lang="ts">
 	import { invalidate } from '$app/navigation';
-	import Footer from '$lib/components/Footer.svelte';
+	import { onMount } from 'svelte';
 	import Header from '$lib/components/Header.svelte';
 	import '$lib/styles/app.css';
-	import { onMount } from 'svelte';
 
 	let { data, children } = $props();
 	let { session, supabase, user } = $derived(data);
@@ -20,7 +19,6 @@
 </script>
 
 <Header {session} />
-<main class="flex h-full min-h-[70vh]">
+<main class="flex h-full min-h-[70vh] pt-5">
 	{@render children()}
 </main>
-<Footer />
